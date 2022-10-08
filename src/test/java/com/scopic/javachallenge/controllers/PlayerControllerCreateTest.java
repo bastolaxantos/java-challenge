@@ -47,7 +47,7 @@ class PlayerControllerCreateTest extends BasePlayerControllerTest {
                 .accept(MediaType.APPLICATION_JSON))
         .andExpect(content()
             .contentType(MediaType.APPLICATION_JSON))
-        .andExpect(status().isOk())
+        .andExpect(status().isCreated())
         .andExpect(jsonPath("$.name", is(player.getName())))
         .andExpect(jsonPath("$.id", notNullValue(Long.class)))
         .andExpect(jsonPath("$.playerSkills[0].id", notNullValue(Long.class)));

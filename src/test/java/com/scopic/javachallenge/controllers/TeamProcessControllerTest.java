@@ -33,7 +33,7 @@ class TeamProcessControllerTest extends BasePlayerControllerTest {
     @Test
     public void testTeamSelection() throws Exception {
         List<TeamDto> teamDtoList = new ArrayList<>();
-        teamDtoList.add(new TeamDto("midfiender", "defense", 1));
+        teamDtoList.add(new TeamDto("midfielder", "defense", 1));
 
         List<Player> players = new ArrayList<>();
         players.add(createPlayer());

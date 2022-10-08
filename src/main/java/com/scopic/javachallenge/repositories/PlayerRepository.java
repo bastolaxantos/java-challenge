@@ -28,5 +28,5 @@ public interface PlayerRepository extends JpaRepository<Player, Long> {
         "WHERE p.position = :position " +
         "AND p.id NOT IN (:alreadySelectedIds) " +
         "ORDER BY s.value DESC")
-    List<Player> findSkilledPlayerByPosition(PlayerPosition position, List<Long> alreadySelectedIds, Pageable pageable);
+    List<Player> findSkilledPlayerByPositionOnly(PlayerPosition position, List<Long> alreadySelectedIds, Pageable pageable);
 }

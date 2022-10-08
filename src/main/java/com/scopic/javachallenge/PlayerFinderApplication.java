@@ -16,7 +16,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan(basePackages = {"com.scopic.*"})
 @EnableJpaRepositories(basePackages = {"com.scopic.*"})
 public class PlayerFinderApplication {
-
+    
     public static void main(String[] args) {
         SpringApplication.run(PlayerFinderApplication.class, args);
     }

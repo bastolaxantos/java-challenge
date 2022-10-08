@@ -9,6 +9,7 @@ import com.scopic.javachallenge.dto.PlayerDto;
 import com.scopic.javachallenge.mappers.EntityMapper;
 import com.scopic.javachallenge.models.Player;
 import com.scopic.javachallenge.services.PlayerService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,7 +44,7 @@ public class PlayerController {
     public ResponseEntity<PlayerDto> create(@Valid @RequestBody PlayerDto playerDto) {
         Player player = entityMapper.map(playerDto, Player.class);
         PlayerDto playerFromDb = entityMapper.map(playerService.save(player), PlayerDto.class);
-        return ResponseEntity.ok(playerFromDb);
+        return ResponseEntity.status(HttpStatus.CREATED).body(playerFromDb);
     }
 
     @PutMapping("/player/{id}")

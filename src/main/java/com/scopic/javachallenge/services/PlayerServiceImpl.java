@@ -72,7 +72,7 @@ public class PlayerServiceImpl implements PlayerService {
                     .map(Player::getId)
                     .collect(Collectors.toList());
 
-                playersFromDb.addAll(playerRepository.findSkilledPlayerByPosition(
+                playersFromDb.addAll(playerRepository.findSkilledPlayerByPositionOnly(
                     PlayerPosition.valueOf(team.getPosition().toUpperCase()),
                     alreadySelectedIds,
                     PageRequest.of(0, team.getNumberOfPlayers() - playersFromDb.size())));
