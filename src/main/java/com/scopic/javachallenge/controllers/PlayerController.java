@@ -28,7 +28,6 @@ public class PlayerController {
   }
 
   @GetMapping("/player")
-  @ResponseBody
   public ResponseEntity<List<PlayerDto>> index() {
     List<PlayerDto> playerDtoList = entityMapper.mapAsList(playerService.getAll(), PlayerDto.class);
     return ResponseEntity.ok(playerDtoList);
@@ -41,7 +40,6 @@ public class PlayerController {
   }
 
   @PostMapping("/player")
-  @ResponseBody
   public ResponseEntity<PlayerDto> create(@Valid @RequestBody PlayerDto playerDto) {
     Player player = entityMapper.map(playerDto, Player.class);
     PlayerDto playerFromDb = entityMapper.map(playerService.save(player), PlayerDto.class);
