@@ -16,17 +16,17 @@ import java.util.List;
 
 
 public interface PlayerRepository extends JpaRepository<Player, Long> {
-  @Query("SELECT p FROM Player p " +
-      "INNER JOIN p.playerSkills s " +
-      "WHERE p.position = :position " +
-      "AND s.skill = :mainSkill " +
-      "ORDER BY s.value DESC")
-  List<Player> findSkilledPlayerByPositionAndSkill(PlayerPosition position, Skill mainSkill, Pageable pageable);
+    @Query("SELECT p FROM Player p " +
+        "INNER JOIN p.playerSkills s " +
+        "WHERE p.position = :position " +
+        "AND s.skill = :mainSkill " +
+        "ORDER BY s.value DESC")
+    List<Player> findSkilledPlayerByPositionAndSkill(PlayerPosition position, Skill mainSkill, Pageable pageable);
 
-  @Query("SELECT p FROM Player p " +
-      "INNER JOIN p.playerSkills s " +
-      "WHERE p.position = :position " +
-      "AND p.id NOT IN (:alreadySelectedIds) " +
-      "ORDER BY s.value DESC")
-  List<Player> findSkilledPlayerByPosition(PlayerPosition position, List<Long> alreadySelectedIds, Pageable pageable);
+    @Query("SELECT p FROM Player p " +
+        "INNER JOIN p.playerSkills s " +
+        "WHERE p.position = :position " +
+        "AND p.id NOT IN (:alreadySelectedIds) " +
+        "ORDER BY s.value DESC")
+    List<Player> findSkilledPlayerByPosition(PlayerPosition position, List<Long> alreadySelectedIds, Pageable pageable);
 }

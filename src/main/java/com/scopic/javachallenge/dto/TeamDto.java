@@ -14,19 +14,19 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 @NoArgsConstructor
 public class TeamDto {
-  @NotNull
-  @EnumValidator(
-      enumClazz = PlayerPosition.class
-  )
-  private String position;
+    @NotNull
+    @EnumValidator(
+        enumClazz = PlayerPosition.class
+    )
+    private String position;
 
-  @NotNull
-  @EnumValidator(
-      enumClazz = Skill.class
-  )
-  private String mainSkill;
+    @NotNull
+    @EnumValidator(
+        enumClazz = Skill.class
+    )
+    private String mainSkill;
 
-  @NotNull
-  @Min(1)
-  private Integer numberOfPlayers;
+    @NotNull
+    @Min(1)
+    private Integer numberOfPlayers;
 }

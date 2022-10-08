@@ -8,7 +8,7 @@ public @interface ValidateString {
 
     String message() default "{uk.dds.ideskos.validator.ValidateString.message}";
 
-    Class<?>[] groups() default { };
+    Class<?>[] groups() default {};
 
-    Class<? extends Payload>[] payload() default { };
+    Class<? extends Payload>[] payload() default {};
 }

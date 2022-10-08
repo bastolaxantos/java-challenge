@@ -12,6 +12,8 @@ import java.lang.annotation.*;
 @ReportAsSingleViolation
 public @interface NoDuplicatePlayerPosition {
     String message() default "The position of the player should not be repeated in the request.";
+
     Class<?>[] groups() default {};
+
     Class<? extends Payload>[] payload() default {};
 }

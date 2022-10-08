@@ -1,20 +1,20 @@
 package com.scopic.javachallenge.services;
 
-import com.scopic.javachallenge.models.Player;
 import com.scopic.javachallenge.dto.TeamDto;
+import com.scopic.javachallenge.models.Player;
 
 import java.util.List;
 
 public interface PlayerService {
-  Player save(Player player);
+    Player save(Player player);
 
-  Player getById(Long id);
+    Player getById(Long id);
 
-  List<Player> getAll();
+    List<Player> getAll();
 
-  Player update(Player player, Long id);
+    Player update(Player player, Long id);
 
-  void delete(Long id);
+    void delete(Long id);
 
-  List<Player> selectTeam(List<TeamDto> teamList);
+    List<Player> selectTeam(List<TeamDto> teamList);
 }

@@ -1,15 +1,10 @@
 package com.scopic.javachallenge.validators;
 
-import java.lang.annotation.Documented;
-import java.lang.annotation.ElementType;
-import java.lang.annotation.Retention;
-import java.lang.annotation.RetentionPolicy;
-import java.lang.annotation.Target;
-
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import javax.validation.ReportAsSingleViolation;
 import javax.validation.constraints.NotNull;
+import java.lang.annotation.*;
 
 @Documented
 @Constraint(validatedBy = EnumValidatorImpl.class)
@@ -19,12 +14,12 @@ import javax.validation.constraints.NotNull;
 @ReportAsSingleViolation
 public @interface EnumValidator {
 
-  Class<? extends Enum<?>> enumClazz();
+    Class<? extends Enum<?>> enumClazz();
 
-  String message() default "Invalid value for field";
+    String message() default "Invalid value for field";
 
-  Class<?>[] groups() default {};
+    Class<?>[] groups() default {};
 
-  Class<? extends Payload>[] payload() default {};
+    Class<? extends Payload>[] payload() default {};
 
 }

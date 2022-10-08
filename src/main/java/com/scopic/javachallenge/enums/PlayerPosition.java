@@ -5,8 +5,6 @@
 
 package com.scopic.javachallenge.enums;
 
-import com.fasterxml.jackson.annotation.JsonValue;
-
 public enum PlayerPosition {
     DEFENDER, MIDFIELDER, FORWARD;
 }
