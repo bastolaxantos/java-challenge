@@ -1,7 +1,7 @@
 package com.scopic.javachallenge.services;
 
 import com.scopic.javachallenge.models.Player;
-import com.scopic.javachallenge.models.TeamSelection;
+import com.scopic.javachallenge.dto.TeamDto;
 
 import java.util.List;
 
@@ -16,5 +16,5 @@ public interface PlayerService {
 
   void delete(Long id);
 
-  List<Player> selectTeam(List<TeamSelection> teamSelectionList);
+  List<Player> selectTeam(List<TeamDto> teamList);
 }

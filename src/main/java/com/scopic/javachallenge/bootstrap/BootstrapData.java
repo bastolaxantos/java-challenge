@@ -35,10 +35,12 @@ public class BootstrapData implements CommandLineRunner {
     PlayerSkill playerSkill1 = new PlayerSkill();
     playerSkill1.setSkill(skill1);
     playerSkill1.setValue(value1);
+    playerSkill1.setPlayer(player);
 
     PlayerSkill playerSkill2 = new PlayerSkill();
     playerSkill2.setSkill(skill2);
     playerSkill2.setValue(value2);
+    playerSkill2.setPlayer(player);
 
     player.getPlayerSkills().add(playerSkill1);
     player.getPlayerSkills().add(playerSkill2);

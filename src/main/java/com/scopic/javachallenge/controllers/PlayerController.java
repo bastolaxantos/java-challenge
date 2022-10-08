@@ -5,12 +5,10 @@
 
 package com.scopic.javachallenge.controllers;
 
-import com.scopic.javachallenge.PlayerDto;
+import com.scopic.javachallenge.dto.PlayerDto;
 import com.scopic.javachallenge.mappers.EntityMapper;
 import com.scopic.javachallenge.models.Player;
 import com.scopic.javachallenge.services.PlayerService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -30,6 +28,7 @@ public class PlayerController {
   }
 
   @GetMapping("/player")
+  @ResponseBody
   public ResponseEntity<List<PlayerDto>> index() {
     List<PlayerDto> playerDtoList = entityMapper.mapAsList(playerService.getAll(), PlayerDto.class);
     return ResponseEntity.ok(playerDtoList);
@@ -42,7 +41,8 @@ public class PlayerController {
   }
 
   @PostMapping("/player")
-  public ResponseEntity<PlayerDto> create(@RequestBody @Valid PlayerDto playerDto) {
+  @ResponseBody
+  public ResponseEntity<PlayerDto> create(@Valid @RequestBody PlayerDto playerDto) {
     Player player = entityMapper.map(playerDto, Player.class);
     PlayerDto playerFromDb = entityMapper.map(playerService.save(player), PlayerDto.class);
     return ResponseEntity.ok(playerFromDb);

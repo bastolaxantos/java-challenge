@@ -9,3 +9,6 @@ spring:
   datasource:
     url: jdbc:h2:mem:test
     driverClassName: org.h2.Driver
+  jackson:
+    mapper:
+      accept-case-insensitive-enums: true

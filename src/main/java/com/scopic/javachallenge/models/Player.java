@@ -5,6 +5,7 @@
 
 package com.scopic.javachallenge.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.scopic.javachallenge.enums.PlayerPosition;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
